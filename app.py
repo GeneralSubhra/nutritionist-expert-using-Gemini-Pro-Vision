@@ -53,7 +53,10 @@ ratio of carbohydrates,protein,fats,fibers,sugar and other nutritions required i
 """
 
 if submit:
-    image_data=input_image_setup(uploaded_file)
-    response=get_gemini_response(input_prompt,image_data)
-    st.header("The response is: ")
-    st.write(response)
+    if uploaded_file is None:
+        st.error("Please upload an image before submitting.")
+    else:
+        image_data = input_image_setup(uploaded_file)
+        response = get_gemini_response(input_prompt, image_data)
+        st.header("The response is: ")
+        st.write(response)
