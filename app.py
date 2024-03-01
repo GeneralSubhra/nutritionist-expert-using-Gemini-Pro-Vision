@@ -27,7 +27,7 @@ def input_image_setup(uploaded_file):
         raise FileNotFoundError("No File Uploaded")
     
 ##making streamlit app app frontend
-st.set_page_config(page_title="Calories Advisor App")
+st.set_page_config(page_title="Nutritionist Expert")
 st.header("Calories Advisor App")
 uploaded_file = st.file_uploader("Choose an image...",type=["jpg","jpeg","png"])
 image=""
