@@ -46,6 +46,7 @@ columns name will be Item number,item name,calories,protein per 100grams ,carbs 
 Finally you can also mention whether the food is healthy or not and also mention the percentage split of the
 ratio of carbohydrates,protein,fats,fibers,sugar and other nutritions required in our diet
 
+if there is no food found in the image then show no food item found 
 
 """
 
