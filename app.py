@@ -35,18 +35,16 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uplaoded Image.",use_column_width=True)
     
-submit=st.button("Tell me about the total calories")            
+submit=st.button("Tell me about the food")            
 
 input_prompt ="""
 You are an expert in nutritionist where you need to see the food items from the image and calculate the 
-total calories,also provide the details of every food items with calories intake in below format
+total calories and protein ,also provide the details of every food items with calories intake in table format 
 
-1.Item 1 - no of calories
-2.Item 2 - no of calories
-----
-----
+columns name will be Item number,item name,calories,protein per 100grams ,carbs per 100 grams
+
 Finally you can also mention whether the food is healthy or not and also mention the percentage split of the
-ratio of carbohydrates,fats,fibers,sugar and other nutritions required in our diet
+ratio of carbohydrates,protein,fats,fibers,sugar and other nutritions required in our diet
 
 
 """
