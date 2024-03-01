@@ -29,7 +29,7 @@ def input_image_setup(uploaded_file):
 ##making streamlit app app frontend
 st.set_page_config(page_title="Nutritionist Expert")
 st.header("Nutritionist Expert App")
-uploaded_file = st.file_uploader("Choose an image...",type=["jpg","jpeg","png"])
+uploaded_file = st.file_uploader("Upload the image of your food...",type=["jpg","jpeg","png"])
 image=""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
