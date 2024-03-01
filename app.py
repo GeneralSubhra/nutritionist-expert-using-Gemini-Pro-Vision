@@ -31,10 +31,14 @@ st.set_page_config(page_title="Nutritionist Expert")
 st.header("Nutritionist Expert App")
 uploaded_file = st.file_uploader("Upload the image of your food...",type=["jpg","jpeg","png"])
 image=""
+
 if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Uplaoded Image.",use_column_width=True)
-    
+    try:
+        image = Image.open(uploaded_file)  
+        st.image(image, caption="Uploaded Image", use_column_width=True)
+    except Exception as e:  
+        st.error(f"Error processing image: {e}")
+
 submit=st.button("Tell me about the food")            
 
 input_prompt ="""
@@ -45,8 +49,6 @@ columns name will be Item number,item name,calories,protein per 100grams ,carbs 
 
 Finally you can also mention whether the food is healthy or not and also mention the percentage split of the
 ratio of carbohydrates,protein,fats,fibers,sugar and other nutritions required in our diet
-
-if there is no food found in the image then show no food item found 
 
 """
 
